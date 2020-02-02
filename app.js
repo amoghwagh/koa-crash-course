@@ -19,6 +19,7 @@ render(app, {
 });
 
 router.get("/", index);
+router.get("/add", showAdd);
 
 async function index(ctx) {
   await ctx.render("index", {
@@ -26,6 +27,11 @@ async function index(ctx) {
     things: things
   });
 }
+
+async function showAdd(ctx) {
+  await ctx.render("add");
+}
+
 router.get("/test", ctx => (ctx.body = "Hello Test"));
 
 app.use(router.routes()).use(router.allowedMethods());
