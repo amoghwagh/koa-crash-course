@@ -3,12 +3,14 @@ const koaRouter = require("koa-router");
 const json = require("koa-json");
 const path = require("path");
 const render = require("koa-ejs");
+const bodyParser = require("koa-body-parser");
 
 const router = new koaRouter();
 const app = new Koa();
 
 const things = ["Programming", "My Family", "Music"];
 app.use(json());
+app.use(bodyParser());
 
 render(app, {
   root: path.join(__dirname, "views"),
@@ -20,6 +22,7 @@ render(app, {
 
 router.get("/", index);
 router.get("/add", showAdd);
+router.post("/add", addThing);
 
 async function index(ctx) {
   await ctx.render("index", {
@@ -29,6 +32,10 @@ async function index(ctx) {
 }
 
 async function showAdd(ctx) {
+  await ctx.render("add");
+}
+
+async function addThing(ctx) {
   await ctx.render("add");
 }
 
