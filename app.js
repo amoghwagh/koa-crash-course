@@ -7,6 +7,7 @@ const render = require("koa-ejs");
 const router = new koaRouter();
 const app = new Koa();
 
+const things = ["Programming", "My Family", "Music"];
 app.use(json());
 
 render(app, {
@@ -19,7 +20,8 @@ render(app, {
 
 router.get("/", async ctx => {
   await ctx.render("index", {
-    title: "Things I Love"
+    title: "Things I Love",
+    things: things
   });
 });
 router.get("/test", ctx => (ctx.body = "Hello Test"));
