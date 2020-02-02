@@ -18,12 +18,14 @@ render(app, {
   debug: false
 });
 
-router.get("/", async ctx => {
+router.get("/", index);
+
+async function index(ctx) {
   await ctx.render("index", {
     title: "Things I Love",
     things: things
   });
-});
+}
 router.get("/test", ctx => (ctx.body = "Hello Test"));
 
 app.use(router.routes()).use(router.allowedMethods());
