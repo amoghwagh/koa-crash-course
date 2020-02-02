@@ -36,7 +36,9 @@ async function showAdd(ctx) {
 }
 
 async function addThing(ctx) {
-  await ctx.render("add");
+  const body = ctx.request.body;
+  things.push(body.thing);
+  ctx.redirect("/");
 }
 
 router.get("/test", ctx => (ctx.body = "Hello Test"));
