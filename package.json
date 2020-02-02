@@ -1,0 +1,26 @@
+{
+  "name": "koa-crash-course",
+  "version": "1.0.0",
+  "description": "A simple app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amoghwagh/koa-crash-course.git"
+  },
+  "author": "Amogh Wagh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amoghwagh/koa-crash-course/issues"
+  },
+  "homepage": "https://github.com/amoghwagh/koa-crash-course#readme",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-json": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
